@@ -11,7 +11,7 @@ Query language to perform complex object searches.
 Description
 -----------
 
-Queryl allows to to build complex queries to match JavaScript objects. This can be useful to:
+Queryl allows one to build complex queries to match JavaScript objects. This can be useful to:
 
 - Search collections of objects (even heterogeneus).
 - Validate objects.
