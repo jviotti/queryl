@@ -279,7 +279,7 @@ Contribute
 - Issue Tracker: [github.com/issuetrackapp/queryl/issues](https://github.com/issuetrackapp/queryl/issues)
 - Source Code: [github.com/issuetrackapp/queryl](https://github.com/issuetrackapp/queryl)
 
-Before submitting a PR, please make sure that you include tests, and that [coffeelint](http://www.coffeelint.org/) runs without any warning:
+Before submitting a PR, please make sure that you include tests, and that [jshint](http://jshint.com) runs without any warning:
 
 ```sh
 $ gulp lint
