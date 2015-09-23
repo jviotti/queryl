@@ -17,6 +17,8 @@ Queryl allows one to build complex queries to match JavaScript objects. This can
 - Validate objects.
 - Assert properties of an object for testing purposes.
 
+Check the [FAQ](https://github.com/issuetrackapp/queryl#faq) for answers to common questions!
+
 Installation
 ------------
 
@@ -284,6 +286,19 @@ Before submitting a PR, please make sure that you include tests, and that [jshin
 ```sh
 $ gulp lint
 ```
+
+FAQ
+---
+
+### Why describing the matcher as an object instead of writing a function?
+
+An object is much easier to encode/decode than a function, which is our use case for building Queryl.
+
+### Why writing queries as objects with horrifying syntax instead of using a sensible DSL?
+
+Queryl is a very low level engine to perform complex matches, and it's more machine than user friendly *by design*. By decoupling the engine from it's frontend, anyone can build their own DSLs that compile to Queryl, relying in a strong tested foundation.
+
+Did you build a frontend for Queryl? Let us know so we can showcase it here!
 
 License
 -------
