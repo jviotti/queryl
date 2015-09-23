@@ -162,6 +162,26 @@ describe('Queryl:', function() {
       }, {})).to.be.true;
     });
 
+    it('should return true for a property named $equal that matches', function() {
+      m.chai.expect(queryl.match({
+        $equal: {
+          $equal: 'foo'
+        }
+      }, {
+        $equal: 'foo'
+      })).to.be.true;
+    });
+
+    it('should return false for a property named $equal that does not match', function() {
+      m.chai.expect(queryl.match({
+        $equal: {
+          $equal: 'foo'
+        }
+      }, {
+        $equal: 'bar'
+      })).to.be.false;
+    });
+
   });
 
   describe('$contain', function() {
@@ -256,6 +276,26 @@ describe('Queryl:', function() {
       })).to.be.false;
     });
 
+    it('should return true for a property named $contain that contains the item', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          $contain: 1
+        }
+      }, {
+        $contain: [ 1, 2, 3 ]
+      })).to.be.true;
+    });
+
+    it('should return false for a property named $contain that does not contain the item', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          $contain: 7
+        }
+      }, {
+        $contain: [ 1, 2, 3 ]
+      })).to.be.false;
+    });
+
   });
 
   describe('$match', function() {
@@ -301,6 +341,26 @@ describe('Queryl:', function() {
         }
       }, {
         foo: 'baz bar'
+      })).to.be.false;
+    });
+
+    it('should return true for a property named $match that matches', function() {
+      m.chai.expect(queryl.match({
+        $match: {
+          $match: /^bar/
+        }
+      }, {
+        $match: 'bar baz'
+      })).to.be.true;
+    });
+
+    it('should return false for a property named $match that does not match', function() {
+      m.chai.expect(queryl.match({
+        $match: {
+          $match: /^bar/
+        }
+      }, {
+        $match: 'foo bar baz'
       })).to.be.false;
     });
 
@@ -382,6 +442,36 @@ describe('Queryl:', function() {
       })).to.be.false;
     });
 
+    it('should return true if a property named $gt is greater than', function() {
+      m.chai.expect(queryl.match({
+        $gt: {
+          $gt: 5
+        }
+      }, {
+        $gt: 6
+      })).to.be.true;
+    });
+
+    it('should return false if a property named $gt is less than', function() {
+      m.chai.expect(queryl.match({
+        $gt: {
+          $gt: 5
+        }
+      }, {
+        $gt: 4
+      })).to.be.false;
+    });
+
+    it('should return false if a property named $gt is equal to', function() {
+      m.chai.expect(queryl.match({
+        $gt: {
+          $gt: 5
+        }
+      }, {
+        $gt: 5
+      })).to.be.false;
+    });
+
   });
 
   describe('$lt', function() {
@@ -457,6 +547,36 @@ describe('Queryl:', function() {
         }
       }, {
         foo: 5.1
+      })).to.be.false;
+    });
+
+    it('should return true if a property named $lt is less than', function() {
+      m.chai.expect(queryl.match({
+        $lt: {
+          $lt: 5
+        }
+      }, {
+        $lt: 4
+      })).to.be.true;
+    });
+
+    it('should return false if a property named $lt is greater than', function() {
+      m.chai.expect(queryl.match({
+        $lt: {
+          $lt: 5
+        }
+      }, {
+        $lt: 6
+      })).to.be.false;
+    });
+
+    it('should return false if a property named $lt is equal to', function() {
+      m.chai.expect(queryl.match({
+        $lt: {
+          $lt: 5
+        }
+      }, {
+        $lt: 5
       })).to.be.false;
     });
 
