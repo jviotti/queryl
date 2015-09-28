@@ -111,5 +111,6 @@
     // [4]: http://www.jshint.com/options/
 
     "maxerr"        : 100,      // Maximum errors before stopping.
+    "maxlen"        : 120,      // Maximum line length.
     "indent"        : 4         // Specify indentation spacing
 }
