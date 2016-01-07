@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Query language to perform complex object searches",
   "main": "lib/queryl.js",
-  "homepage": "https://github.com/issuetrackapp/queryl",
+  "homepage": "https://github.com/jviotti/queryl",
   "repository": {
     "type": "git",
-    "url": "git://github.com/issuetrackapp/queryl.git"
+    "url": "git://github.com/jviotti/queryl.git"
   },
   "directories": {
     "test": "tests"

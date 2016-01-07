@@ -2,22 +2,20 @@ queryl
 ------
 
 [![npm version](https://badge.fury.io/js/queryl.svg)](http://badge.fury.io/js/queryl)
-[![dependencies](https://david-dm.org/issuetrackapp/queryl.png)](https://david-dm.org/issuetrackapp/queryl.png)
-[![Build Status](https://travis-ci.org/issuetrackapp/queryl.svg?branch=master)](https://travis-ci.org/issuetrackapp/queryl)
-[![Build status](https://ci.appveyor.com/api/projects/status/3d3rxla0oartoh5p?svg=true)](https://ci.appveyor.com/project/jviotti/queryl)
+[![dependencies](https://david-dm.org/jviotti/queryl.png)](https://david-dm.org/jviotti/queryl.png)
+[![Build Status](https://travis-ci.org/jviotti/queryl.svg?branch=master)](https://travis-ci.org/jviotti/queryl)
+[![Build status](https://ci.appveyor.com/api/projects/status/3d3rxla0oartoh5p/branch/master?svg=true)](https://ci.appveyor.com/project/jviotti/queryl/branch/master)
 
 Query language to perform complex object searches.
 
 Description
 -----------
 
-Queryl allows one to build complex queries to match JavaScript objects. This can be useful to:
+Queryl allows to to build complex queries to match JavaScript objects. This can be useful to:
 
 - Search collections of objects (even heterogeneus).
 - Validate objects.
 - Assert properties of an object for testing purposes.
-
-Check the [FAQ](https://github.com/issuetrackapp/queryl#faq) for answers to common questions!
 
 Installation
 ------------
@@ -73,14 +71,14 @@ Operations
 
 
 * [operations](#operations) : <code>object</code>
-  * [.$and()](#operations.$and)
-  * [.$or()](#operations.$or)
-  * [.$not()](#operations.$not)
-  * [.$equal()](#operations.$equal)
-  * [.$contain()](#operations.$contain)
-  * [.$match()](#operations.$match)
-  * [.$gt()](#operations.$gt)
-  * [.$lt()](#operations.$lt)
+    * [.$and()](#operations.$and)
+    * [.$or()](#operations.$or)
+    * [.$not()](#operations.$not)
+    * [.$equal()](#operations.$equal)
+    * [.$contain()](#operations.$contain)
+    * [.$match()](#operations.$match)
+    * [.$gt()](#operations.$gt)
+    * [.$lt()](#operations.$lt)
 
 <a name="operations.$and"></a>
 ### operations.$and()
@@ -264,7 +262,7 @@ queryl.match({
 Support
 -------
 
-If you're having any problem, please [raise an issue](https://github.com/issuetrackapp/queryl/issues/new) on GitHub and the IssueTrack team will be happy to help.
+If you're having any problem, please [raise an issue](https://github.com/jviotti/queryl/issues/new) on GitHub and I'll be happy to help.
 
 Tests
 -----
@@ -278,27 +276,14 @@ $ gulp test
 Contribute
 ----------
 
-- Issue Tracker: [github.com/issuetrackapp/queryl/issues](https://github.com/issuetrackapp/queryl/issues)
-- Source Code: [github.com/issuetrackapp/queryl](https://github.com/issuetrackapp/queryl)
+- Issue Tracker: [github.com/jviotti/queryl/issues](https://github.com/jviotti/queryl/issues)
+- Source Code: [github.com/jviotti/queryl](https://github.com/jviotti/queryl)
 
 Before submitting a PR, please make sure that you include tests, and that [jshint](http://jshint.com) runs without any warning:
 
 ```sh
 $ gulp lint
 ```
-
-FAQ
----
-
-### Why describing the matcher as an object instead of writing a function?
-
-An object is much easier to encode/decode than a function, which is our use case for building Queryl.
-
-### Why writing queries as objects with horrifying syntax instead of using a sensible DSL?
-
-Queryl is a very low level engine to perform complex matches, and it's more machine than user friendly *by design*. By decoupling the engine from it's frontend, anyone can build their own DSLs that compile to Queryl, relying in a strong tested foundation.
-
-Did you build a frontend for Queryl? Let us know so we can showcase it here!
 
 License
 -------
