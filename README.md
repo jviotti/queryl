@@ -1,12 +1,12 @@
 queryl
-------
+======
+
+> Query language to perform complex object searches.
 
 [![npm version](https://badge.fury.io/js/queryl.svg)](http://badge.fury.io/js/queryl)
-[![dependencies](https://david-dm.org/jviotti/queryl.png)](https://david-dm.org/jviotti/queryl.png)
+[![dependencies](https://david-dm.org/jviotti/queryl.svg)](https://david-dm.org/jviotti/queryl.svg)
 [![Build Status](https://travis-ci.org/jviotti/queryl.svg?branch=master)](https://travis-ci.org/jviotti/queryl)
 [![Build status](https://ci.appveyor.com/api/projects/status/3d3rxla0oartoh5p/branch/master?svg=true)](https://ci.appveyor.com/project/jviotti/queryl/branch/master)
-
-Query language to perform complex object searches.
 
 Description
 -----------
@@ -30,6 +30,7 @@ Documentation
 -------------
 
 <a name="module_queryl.match"></a>
+
 ### queryl.match(query, object) ⇒ <code>Boolean</code>
 **Kind**: static method of <code>[queryl](#module_queryl)</code>  
 **Summary**: Query an object  
@@ -81,6 +82,7 @@ Operations
     * [.$lt()](#operations.$lt)
 
 <a name="operations.$and"></a>
+
 ### operations.$and()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
@@ -107,6 +109,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$or"></a>
+
 ### operations.$or()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
@@ -133,6 +136,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$not"></a>
+
 ### operations.$not()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
@@ -155,6 +159,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$equal"></a>
+
 ### operations.$equal()
 This operation supports deep equality.
 
@@ -177,6 +182,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$contain"></a>
+
 ### operations.$contain()
 This operation supports deep equality.
 
@@ -199,6 +205,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$match"></a>
+
 ### operations.$match()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
@@ -219,6 +226,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$gt"></a>
+
 ### operations.$gt()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
@@ -239,6 +247,7 @@ queryl.match({
 > true
 ```
 <a name="operations.$lt"></a>
+
 ### operations.$lt()
 **Kind**: static method of <code>[operations](#operations)</code>  
 **Properties**
