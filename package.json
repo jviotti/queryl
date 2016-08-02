@@ -1,6 +1,6 @@
 {
   "name": "queryl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Query language to perform complex object searches",
   "main": "lib/queryl.js",
   "homepage": "https://github.com/jviotti/queryl",
