@@ -8,16 +8,14 @@ cache:
   - C:\Users\appveyor\.node-gyp
   - '%AppData%\npm-cache'
 
-# what combinations to test
 environment:
   matrix:
-    - nodejs_version: 0.10
-    - nodejs_version: 0.11
+    - nodejs_version: 6
     - nodejs_version: 0.12
 
 install:
   - ps: Install-Product node $env:nodejs_version x64
-  - npm -g install npm@2
+  - npm -g install npm@latest
   - set PATH=%APPDATA%\npm;%PATH%
   - npm install
 
@@ -26,5 +24,4 @@ build: off
 test_script:
   - node --version
   - npm --version
-  - ps: npm test
   - cmd: npm test
