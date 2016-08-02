@@ -51,7 +51,7 @@ gulp.task('test', [ 'lint' ], function () {
     read: false
   })
     .pipe(mocha({
-      reporter: 'nyan'
+      reporter: 'spec'
     }));
 });
 
