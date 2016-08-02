@@ -296,6 +296,85 @@ describe('Queryl:', function() {
       })).to.be.false;
     });
 
+    it('should return true for a nested array property that includes the value', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          'foo.bar': 2
+        }
+      }, {
+        foo: {
+          bar: [ 1, 2, 3 ]
+        }
+      })).to.be.true;
+    });
+
+    it('should return false for a nested array property that does not include the value', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          'foo.bar': 5
+        }
+      }, {
+        foo: {
+          bar: [ 1, 2, 3 ]
+        }
+      })).to.be.false;
+    });
+
+    it('should return true for a nested object array property that includes the value', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          'foo.bar': {
+            value: 2
+          }
+        }
+      }, {
+        foo: {
+          bar: [
+            { value: 1 },
+            { value: 2 },
+            { value: 3 }
+          ]
+        }
+      })).to.be.true;
+    });
+
+    it('should return false for a nested object array property that does not include the value', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          'foo.bar': {
+            value: 5
+          }
+        }
+      }, {
+        foo: {
+          bar: [
+            { value: 1 },
+            { value: 2 },
+            { value: 3 }
+          ]
+        }
+      })).to.be.false;
+    });
+
+    it('should return false for a nested object array that includes the value but lacks other properties', function() {
+      m.chai.expect(queryl.match({
+        $contain: {
+          'foo.bar': {
+            value: 2,
+            foo: 'bar'
+          }
+        }
+      }, {
+        foo: {
+          bar: [
+            { value: 1 },
+            { value: 2 },
+            { value: 3 }
+          ]
+        }
+      })).to.be.false;
+    });
+
   });
 
   describe('$match', function() {
