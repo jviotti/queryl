@@ -66,6 +66,34 @@ queryl.match({
 });
 > true
 ```
+**Example**  
+```js
+queryl.match({
+  $contain: {
+    'foo.bar': 2
+  }
+}, {
+  foo: {
+    bar: [ 1, 2, 3 ]
+  }
+});
+> true
+```
+**Example**  
+```js
+queryl.match({
+  $contain: {
+    'foo.bar': {
+      baz: 6
+    }
+  }
+}, {
+  foo: {
+    bar: [ 1, 2, { baz: 6 } ]
+  }
+});
+> true
+```
 
 Operations
 ----------
