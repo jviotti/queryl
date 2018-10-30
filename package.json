@@ -12,7 +12,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "gulp test",
+    "test": "gulp test && stryker run",
     "prepublish": "gulp test",
     "readme": "jsdoc2md --template doc/README.hbs lib/{,**/}*.js > README.md"
   },
@@ -32,7 +32,13 @@
     "jsdoc-to-markdown": "^1.1.1",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.0.1",
-    "mochainon": "^1.0.0"
+    "mochainon": "^1.0.0",
+    "stryker": "^0.30.1",
+    "stryker-api": "^0.21.4",
+    "stryker-html-reporter": "^0.16.5",
+    "stryker-javascript-mutator": "^0.11.2",
+    "stryker-mocha-framework": "^0.12.5",
+    "stryker-mocha-runner": "^0.14.5"
   },
   "dependencies": {
     "lodash": "^4.14.1"
