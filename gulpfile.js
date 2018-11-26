@@ -25,16 +25,12 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
-var mocha = require('gulp-mocha');
 
 var paths = {
   scripts: [
     './lib/**/*.js',
     './tests/**/*.spec.js',
     'gulpfile.js'
-  ],
-  tests: [
-    './tests/**/*.spec.js'
   ]
 };
 
@@ -44,21 +40,3 @@ gulp.task('lint', function() {
     .pipe(jshint())
     .pipe(jshint.reporter(jshintStylish));
 });
-
-gulp.task('test', [ 'lint' ], function () {
-  'use strict';
-  return gulp.src(paths.tests, {
-    read: false
-  })
-    .pipe(mocha({
-      reporter: 'spec'
-    }));
-});
-
-gulp.task('watch', [ 'test' ], function() {
-  'use strict';
-  gulp.watch(paths.scripts, [ 'test' ]);
-  gulp.watch(paths.tests, [ 'test' ]);
-});
-
-gulp.task('default', [ 'test' ]);
