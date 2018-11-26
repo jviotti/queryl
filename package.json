@@ -12,7 +12,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests && stryker run",
+    "test": "nyc --reporter=lcov mocha tests && stryker run",
     "readme": "jsdoc2md --template doc/README.hbs lib/{,**/}*.js > README.md"
   },
   "keywords": [
